@@ -1,16 +1,22 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
+import { ThemeContext } from "./App";
 
 function Counter(props) {
   const [cnt, setCnt] = useState(props.cntHolder);
+  const style = useContext(ThemeContext);
   function handleButton(amount) {
     setCnt((count) => count + amount);
     setCnt((count) => count + amount);
   }
   return (
     <>
-      <button onClick={() => handleButton(-3)}>-</button>
+      <button style={style} onClick={() => handleButton(-3)}>
+        -
+      </button>
       <span>{cnt}</span>
-      <button onClick={() => handleButton(2)}>+</button>
+      <button style={style} onClick={() => handleButton(2)}>
+        +
+      </button>
     </>
   );
 }
