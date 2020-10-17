@@ -1,20 +1,8 @@
-import React, { useState } from "react";
+import React from "react";
+import Counter from "./Counter";
 
 function App() {
-  const [cnt, setCnt] = useState(0);
-  function handleDecr() {
-    setCnt(cnt - 1);
-  }
-  function handleIncr() {
-    setCnt(cnt + 1);
-  }
-  return (
-    <>
-      <button onClick={handleDecr}>-</button>
-      <h2>{cnt}</h2>
-      <button onClick={handleIncr}>+</button>
-    </>
-  );
+  return <Counter cntHolder={10} />;
 }
 
 export default App;
